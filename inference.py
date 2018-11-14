@@ -309,7 +309,7 @@ if __name__ == "__main__":
         if answers is None:
             print(colorama.Fore.RED + "! Question can't be empty" + colorama.Fore.RESET)
         else:
-            for i, _ in enumerate(answers['scores']):
+            for i, _ in enumerate(answers['scores']): 
                 if answers['scores'][i] == max(answers['scores']) and answers['scores'][i] >= score_settings['bad_response_threshold'] :
                     print("{}- {}{} [{}] {}{}{}".format(colorama.Fore.GREEN if answers['scores'][i] == max(answers['scores']) and answers['scores'][i] >= score_settings['bad_response_threshold'] else colorama.Fore.YELLOW if answers['scores'][i] >= score_settings['bad_response_threshold'] else colorama.Fore.RED, answers['answers'][i], colorama.Fore.RESET, answers['scores'][i], colorama.Fore.BLUE, answers['score_modifiers'][i] if score_settings['show_score_modifiers'] else '', colorama.Fore.RESET))
 
